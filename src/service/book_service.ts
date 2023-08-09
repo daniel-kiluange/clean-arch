@@ -10,13 +10,6 @@ export class BookService implements BookUseCase {
         this.Repository = repository
     }
 
-    static GetInstance(repository: BookRepository){
-        if (!this.instance) {
-            this.instance = new BookService(repository)
-        }
-        return this.instance
-    }
-
     FindByID(ID: number): Book {
         return this.Repository.FindByID(ID)
     }

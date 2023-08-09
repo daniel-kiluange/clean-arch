@@ -5,7 +5,7 @@ import { BookService } from "../../service/book_service"
 function main() {
     let repo = BookRepositoryImpl.GetInstance()
     let b: Book = new Book("Book test")
-    let service = BookService.GetInstance(repo)
+    let service = new BookService(repo)
 
     let result = service.Store(b)
 
